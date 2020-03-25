@@ -17,7 +17,7 @@ export class Statistics {
     return sum
   }
 
-  public get avg(): number {
+  public get average(): number {
     return this.dataSeries.length > 0 ? this.dataSeries[0] : 0
   }
 

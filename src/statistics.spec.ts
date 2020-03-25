@@ -18,7 +18,7 @@ describe("Statistics on empty arrays", () => {
   })
 
   it("should return 0 when asked for the avg", () => {
-    expect(statistics.avg).to.be.equal(0)
+    expect(statistics.average).to.be.equal(0)
   })
 
 })
@@ -46,7 +46,7 @@ describe("Statistics on one-element arrays", () => {
   it("should return the element as avg", () => {
     let anyNumber = 42
     const x = new Statistics([anyNumber])
-    expect(x.avg).to.be.equal(42)
+    expect(x.average).to.be.equal(42)
   })
 })
 
