@@ -51,7 +51,7 @@ describe("Statistics on one-element arrays", () => {
 })
 
 describe("Statistics on arbitrary arrays", () => {
-  const arbitraryArray = [42, 17, 84, 123, 99]
+  const arbitraryArray = [42, 17, 84, 123, 100]
   const statistics = new Statistics(arbitraryArray)
 
   it("should return the maximum of an array as max", () => {
@@ -63,6 +63,10 @@ describe("Statistics on arbitrary arrays", () => {
   })
 
   it("should return the sum of an array as a sum", () => {
-    expect(statistics.sum).to.be.equal(365)
+    expect(statistics.sum).to.be.equal(366)
+  })
+
+  it("should return the average of an array as a average", () => {
+    expect(statistics.average).to.be.equal(73.2)
   })
 })

@@ -34,7 +34,11 @@ export class Statistics {
   }
 
   public get average(): number {
-    return this.dataSeries.length > 0 ? this.dataSeries[0] : 0
+    if (this.dataSeries.length > 0) {
+      return this.sum / this.dataSeries.length
+    } else {
+      return 0
+    }
   }
 
   constructor(dataSeries: number[]) {
