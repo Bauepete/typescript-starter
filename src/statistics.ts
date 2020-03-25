@@ -2,23 +2,27 @@ export class Statistics {
   private dataSeries: number[]
 
   public get max(): number {
-    let maximum = this.dataSeries.length > 0 ? this.dataSeries[0] : 0
+    const max = this.selectNumberAccordingToFilter((x, y) => { return x > y })
+    return max
+  }
+
+  private selectNumberAccordingToFilter(filter: (x: number, y: number) => boolean): number {
+    let selectedValue = this.selectFirstValueIfPossible()
     this.dataSeries.forEach(number => {
-      if (number > maximum) {
-        maximum = number
+      if (filter(number,  selectedValue)) {
+        selectedValue = number
       }
     });
-    return maximum
+    return selectedValue
+  }
+
+  private selectFirstValueIfPossible() {
+    return this.dataSeries.length > 0 ? this.dataSeries[0] : 0
   }
 
   public get min(): number {
-    let minimum = this.dataSeries.length > 0 ? this.dataSeries[0] : 0
-    this.dataSeries.forEach(number => {
-      if (number < minimum) {
-        minimum = number
-      }
-    });
-    return minimum
+    const min = this.selectNumberAccordingToFilter((x, y) => { return x < y })
+    return min
   }
 
   public get sum(): number {
