@@ -2,11 +2,23 @@ export class Statistics {
   private dataSeries: number[]
 
   public get max(): number {
-    return this.dataSeries.length > 0 ? this.dataSeries[0] : 0
+    let maximum = this.dataSeries.length > 0 ? this.dataSeries[0] : 0
+    this.dataSeries.forEach(number => {
+      if (number > maximum) {
+        maximum = number
+      }
+    });
+    return maximum
   }
 
   public get min(): number {
-    return this.dataSeries.length > 0 ? this.dataSeries[0] : 0
+    let minimum = this.dataSeries.length > 0 ? this.dataSeries[0] : 0
+    this.dataSeries.forEach(number => {
+      if (number < minimum) {
+        minimum = number
+      }
+    });
+    return minimum
   }
 
   public get sum(): number {

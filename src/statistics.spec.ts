@@ -50,10 +50,19 @@ describe("Statistics on one-element arrays", () => {
   })
 })
 
-describe("Statistics on two-element arrays", () => {
-  it("should return first + second element as a sum", () => {
-    let anyTwoNumbers = [42, 17]
-    const x = new Statistics(anyTwoNumbers)
-    expect(x.sum).to.be.equal(42 + 17)
+describe("Statistics on arbitrary arrays", () => {
+  const arbitraryArray = [42, 17, 84, 123, 99]
+  const statistics = new Statistics(arbitraryArray)
+
+  it("should return the maximum of an array as max", () => {
+    expect(statistics.max).to.be.equal(123)
+  })
+
+  it("should return the minimum of an array as min", () => {
+    expect(statistics.min).to.be.equal(17)
+  })
+
+  it("should return the sum of an array as a sum", () => {
+    expect(statistics.sum).to.be.equal(365)
   })
 })
