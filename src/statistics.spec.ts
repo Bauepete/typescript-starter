@@ -26,7 +26,7 @@ describe("Statistics on empty arrays", () => {
 describe("Statistics on one-element arrays", () => {
   const anyNumber = 42
   const statistics = new Statistics([anyNumber])
-  
+
   it("should return the element as max", () => {
     expect(statistics.max).to.be.equal(42)
   })

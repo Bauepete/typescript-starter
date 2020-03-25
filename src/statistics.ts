@@ -1,6 +1,14 @@
 export class Statistics {
   private dataSeries: number[]
-  
+
+  public get max(): number {
+    return this.dataSeries.length > 0 ? this.dataSeries[0] : 0
+  }
+
+  public get min(): number {
+    return this.dataSeries.length > 0 ? this.dataSeries[0] : 0
+  }
+
   public get sum(): number {
     let sum = 0
     this.dataSeries.forEach(number => {
@@ -8,16 +16,12 @@ export class Statistics {
     });
     return sum
   }
-  max: number = 0
-  min: number = 0
-  avg: number = 0
+
+  public get avg(): number {
+    return this.dataSeries.length > 0 ? this.dataSeries[0] : 0
+  }
 
   constructor(dataSeries: number[]) {
     this.dataSeries = dataSeries
-    if (dataSeries.length > 0) {
-      this.max = dataSeries[0]
-      this.min = dataSeries[0]
-      this.avg = dataSeries[0]
-    }
   }
 }
